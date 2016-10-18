@@ -10,8 +10,8 @@ import javax.persistence.Id
 class Estudiante implements  Serializable{
 
     @Id
-    String matricula;
-    String nombre;
-    String email;
+    String matricula="";
+    String nombre="";
+    String email="";
 
 }

@@ -37,6 +37,9 @@ class MainUI extends UI {
 
     @Override
     protected void init(VaadinRequest request) {
+
+        UI.getCurrent().locale=new Locale("en");
+
         VerticalLayout layout = new VerticalLayout() //creando el layout que estaremos trabajando.
 
         form.setMainUI(this); //agregando la referencia

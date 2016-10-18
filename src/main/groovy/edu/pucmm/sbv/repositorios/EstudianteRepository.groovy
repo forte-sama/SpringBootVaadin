@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository
  */
 interface EstudianteRepository extends JpaRepository<Estudiante, Integer>  {
 
-    List<Estudiante> findAllByNombre(String nombre)
+    List<Estudiante> findAllByNombreIgnoreCaseContaining(String nombre)
 }

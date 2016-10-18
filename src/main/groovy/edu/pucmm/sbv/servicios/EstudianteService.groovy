@@ -22,7 +22,7 @@ class EstudianteService {
         if(nombre.trim().isEmpty()) {
             return estudianteRepository.findAll();
         }else{
-            return estudianteRepository.findAllByNombre(nombre);
+            return estudianteRepository.findAllByNombreIgnoreCaseContaining(nombre);
         }
         return lista;
     }

@@ -10,6 +10,15 @@ buildscript {
 	}
 }
 
+plugins {
+	id 'fi.jasoft.plugin.vaadin' version '1.0'
+}
+
+// Vaadin plugin requires Gradle 3.0+
+task wrapper(type: Wrapper) {
+	gradleVersion = '3.0'
+}
+
 apply plugin: 'groovy'
 apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
@@ -30,8 +39,12 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('com.vaadin:vaadin-spring-boot-starter:1.0.2')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile("org.springframework.boot:spring-boot-devtools")
 	compile('org.codehaus.groovy:groovy')
 	runtime('com.h2database:h2')
+
+	compile('com.vaadin.addon:vaadin-calendar:2.0.0')
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
@@ -40,3 +53,6 @@ dependencyManagement {
 		mavenBom "com.vaadin:vaadin-bom:7.7.3"
 	}
 }
+
+// Configure bootRun to ensure the widgetset and theme is compiled
+bootRun.dependsOn 'vaadinCompile', 'vaadinThemeCompile'
