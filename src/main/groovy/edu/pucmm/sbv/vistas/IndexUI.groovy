@@ -13,6 +13,7 @@ import com.vaadin.ui.Panel
 import com.vaadin.ui.UI
 import com.vaadin.ui.VerticalLayout
 import edu.pucmm.sbv.vistas.addons.PruebaCalendario
+import edu.pucmm.sbv.vistas.addons.PruebaQrCode
 import edu.pucmm.sbv.vistas.basico.BasicoPanel
 import edu.pucmm.sbv.vistas.basico.Formularios
 
@@ -56,18 +57,27 @@ class IndexUI extends UI {
             }
         })
 
+        Button botonQrCode = new Button("QrCode", new Button.ClickListener() {
+            @Override
+            void buttonClick(Button.ClickEvent event) {
+                setContent(new PruebaQrCode());
+            }
+        })
+
         VerticalLayout vli = new VerticalLayout()
 
         vli.addComponent(button1)
         vli.addComponent(botonError)
         vli.addComponent(botonFormularios)
         vli.addComponent(botonCalendario)
+        vli.addComponent(botonQrCode)
 
         //propiedades del layout.
         vli.setComponentAlignment(button1, Alignment.MIDDLE_CENTER);
         vli.setComponentAlignment(botonError, Alignment.MIDDLE_CENTER);
         vli.setComponentAlignment(botonFormularios, Alignment.MIDDLE_CENTER);
         vli.setComponentAlignment(botonCalendario, Alignment.MIDDLE_CENTER);
+        vli.setComponentAlignment(botonQrCode, Alignment.MIDDLE_CENTER);
 
         //
         verticalLayout.addComponent(vli)

@@ -43,7 +43,7 @@ dependencies {
 	compile('org.codehaus.groovy:groovy')
 	runtime('com.h2database:h2')
 
-	compile('com.vaadin.addon:vaadin-calendar:2.0.0')
+	compile('org.vaadin.addons:qrcode:2.0.1')
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

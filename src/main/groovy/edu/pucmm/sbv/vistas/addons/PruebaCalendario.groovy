@@ -1,6 +1,6 @@
 package edu.pucmm.sbv.vistas.addons
 
-import com.vaadin.addon.calendar.ui.Calendar
+import com.vaadin.ui.Calendar
 import com.vaadin.ui.VerticalLayout
 
 /**
